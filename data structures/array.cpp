@@ -1,8 +1,5 @@
-#include <array>
 #include <iostream>
 #include <stdexcept>
-#include <utility>
-
 
 template<typename T, size_t S>
 class array {
@@ -16,7 +13,7 @@ public:
 
 	using ostream = std::ostream;
 	static friend ostream& operator<<(ostream& ostream, array& arr) {
-		for (int i = 0; i < arr.size(); i++) {
+		for (size_t i = 0; i < arr.size(); i++) {
 			ostream << arr[i];
 		}
 		return ostream;
@@ -63,7 +60,7 @@ public:
 	constexpr bool empty() const {
 		return S == 0;
 	}
-	constexpr int size() const {
+	constexpr size_t size() const {
 		return S;
 	}
 	constexpr size_t max_size() const {
@@ -71,13 +68,13 @@ public:
 	}
 
 	constexpr void fill(const_reference value) {
-		for (int i = 0; i < S; i++) {
+		for (size_t i = 0; i < S; i++) {
 			_data[i] = value;
 		}
 	}
 	constexpr void swap(array& other) {
 		array& thisref = *this;
-		for (int i = 0; i < size(); i++) {
+		for (size_t i = 0; i < size(); i++) {
 			T temp = thisref[i];
 			thisref[i] = other[i];
 			other[i] = temp;
