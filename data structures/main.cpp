@@ -1,9 +1,7 @@
-#include "array.cpp"
 #include "vector.cpp"
-
+#include <vector>
 #include <iostream>
 
-int main() {	
-	array<int, 5> myArray{};
-	vector<int> myvector{};
+int main() {
+
 }
